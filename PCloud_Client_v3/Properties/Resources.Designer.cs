@@ -153,6 +153,16 @@ namespace PCloud_Client_v3.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap image_news {
+            get {
+                object obj = ResourceManager.GetObject("image_news", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap image_setting {
             get {
                 object obj = ResourceManager.GetObject("image_setting", resourceCulture);

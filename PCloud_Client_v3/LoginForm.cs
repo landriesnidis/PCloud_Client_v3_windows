@@ -103,5 +103,10 @@ namespace PCloud_Client_v3
             btnLogin.Enabled = false;
             ahr.PostHttpResponse(strURL, null);
         }
+
+        private void btnSetting_Click(object sender, EventArgs e)
+        {
+            new SettingForm().ShowDialog();
+        }
     }
 }

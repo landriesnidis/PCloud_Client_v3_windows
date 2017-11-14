@@ -30,7 +30,8 @@
         {
             this.progressBar = new System.Windows.Forms.ProgressBar();
             this.labFileName = new System.Windows.Forms.Label();
-            this.labSavePath = new System.Windows.Forms.Label();
+            this.labSavePath = new System.Windows.Forms.LinkLabel();
+            this.labState = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // progressBar
@@ -58,12 +59,26 @@
             this.labSavePath.Name = "labSavePath";
             this.labSavePath.Size = new System.Drawing.Size(77, 12);
             this.labSavePath.TabIndex = 3;
+            this.labSavePath.TabStop = true;
             this.labSavePath.Text = "文件保存路径";
+            this.labSavePath.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.labSavePath_LinkClicked);
+            // 
+            // labState
+            // 
+            this.labState.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labState.AutoSize = true;
+            this.labState.ForeColor = System.Drawing.Color.Green;
+            this.labState.Location = new System.Drawing.Point(456, 4);
+            this.labState.Name = "labState";
+            this.labState.Size = new System.Drawing.Size(41, 12);
+            this.labState.TabIndex = 4;
+            this.labState.Text = "下载中";
             // 
             // FileDownloadProgressBar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.labState);
             this.Controls.Add(this.labSavePath);
             this.Controls.Add(this.labFileName);
             this.Controls.Add(this.progressBar);
@@ -78,7 +93,8 @@
 
         private System.Windows.Forms.ProgressBar progressBar;
         private System.Windows.Forms.Label labFileName;
-        private System.Windows.Forms.Label labSavePath;
+        private System.Windows.Forms.LinkLabel labSavePath;
+        private System.Windows.Forms.Label labState;
 
     }
 }

@@ -37,6 +37,7 @@
             this.labPsw = new System.Windows.Forms.Label();
             this.txtUser = new System.Windows.Forms.TextBox();
             this.labUser = new System.Windows.Forms.Label();
+            this.btnSetting = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label2
@@ -125,11 +126,23 @@
             this.labUser.TabIndex = 19;
             this.labUser.Text = "帐号";
             // 
+            // btnSetting
+            // 
+            this.btnSetting.BackgroundImage = global::PCloud_Client_v3.Properties.Resources.image_setting;
+            this.btnSetting.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSetting.Location = new System.Drawing.Point(1, 277);
+            this.btnSetting.Name = "btnSetting";
+            this.btnSetting.Size = new System.Drawing.Size(25, 25);
+            this.btnSetting.TabIndex = 28;
+            this.btnSetting.UseVisualStyleBackColor = true;
+            this.btnSetting.Click += new System.EventHandler(this.btnSetting_Click);
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(339, 303);
+            this.Controls.Add(this.btnSetting);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnReg);
@@ -162,5 +175,6 @@
         private System.Windows.Forms.Label labPsw;
         private System.Windows.Forms.TextBox txtUser;
         private System.Windows.Forms.Label labUser;
+        private System.Windows.Forms.Button btnSetting;
     }
 }

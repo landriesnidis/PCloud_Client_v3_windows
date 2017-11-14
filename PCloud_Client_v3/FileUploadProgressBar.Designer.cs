@@ -32,6 +32,7 @@
             this.labFileName = new System.Windows.Forms.Label();
             this.labSavePath = new System.Windows.Forms.Label();
             this.labState = new System.Windows.Forms.Label();
+            this.llabCancel = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // progressBar
@@ -66,16 +67,29 @@
             this.labState.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labState.AutoSize = true;
             this.labState.ForeColor = System.Drawing.Color.Red;
-            this.labState.Location = new System.Drawing.Point(470, 4);
+            this.labState.Location = new System.Drawing.Point(450, 4);
             this.labState.Name = "labState";
             this.labState.Size = new System.Drawing.Size(41, 12);
             this.labState.TabIndex = 4;
             this.labState.Text = "label1";
             // 
+            // llabCancel
+            // 
+            this.llabCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.llabCancel.AutoSize = true;
+            this.llabCancel.Location = new System.Drawing.Point(450, 28);
+            this.llabCancel.Name = "llabCancel";
+            this.llabCancel.Size = new System.Drawing.Size(29, 12);
+            this.llabCancel.TabIndex = 5;
+            this.llabCancel.TabStop = true;
+            this.llabCancel.Text = "取消";
+            this.llabCancel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llabCancel_LinkClicked);
+            // 
             // FileUploadProgressBar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.llabCancel);
             this.Controls.Add(this.labState);
             this.Controls.Add(this.labSavePath);
             this.Controls.Add(this.labFileName);
@@ -93,5 +107,6 @@
         private System.Windows.Forms.Label labFileName;
         private System.Windows.Forms.Label labSavePath;
         private System.Windows.Forms.Label labState;
+        private System.Windows.Forms.LinkLabel llabCancel;
     }
 }

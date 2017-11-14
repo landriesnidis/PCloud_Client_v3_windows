@@ -59,7 +59,9 @@ namespace PCloud_Client_v3
             fd.Finished += (savePath) =>{
                 MethodInvoker mi = new MethodInvoker(() =>
                 {
-                    labFileName.Text = labFileName.Text + " - 已完成";
+                    labFileName.Text = labFileName.Text;
+                    labState.Text = "已完成";
+                    labState.ForeColor = Color.Blue;
                 });
                 this.BeginInvoke(mi);
             };
@@ -69,6 +71,11 @@ namespace PCloud_Client_v3
                 fd.DownloadFile();
             });
             task.Start();
+        }
+
+        private void labSavePath_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("Explorer", "/select," + labSavePath.Text);
         }
     }
 

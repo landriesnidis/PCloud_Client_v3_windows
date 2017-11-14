@@ -14,3 +14,4 @@ E:\C# - Windows PC 编程\项目\PCloud_Client_v3\PCloud_Client_v3\obj\Release\P
 E:\C# - Windows PC 编程\项目\PCloud_Client_v3\PCloud_Client_v3\obj\Release\PCloud_Client_v3.FileUploadProgressBar.resources
 E:\C# - Windows PC 编程\项目\PCloud_Client_v3\PCloud_Client_v3\obj\Release\PCloud_Client_v3.RegisterForm.resources
 E:\C# - Windows PC 编程\项目\PCloud_Client_v3\PCloud_Client_v3\obj\Release\PCloud_Client_v3.SettingForm.resources
+E:\C# - Windows PC 编程\项目\PCloud_Client_v3\PCloud_Client_v3\obj\Release\PCloud_Client_v3.csprojResolveAssemblyReference.cache

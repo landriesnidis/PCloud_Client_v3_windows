@@ -237,7 +237,11 @@ namespace PCloud_Client_v3
                     stream.Write(data, 0, data.Length);
                 }
             }
-            return request.GetResponse() as HttpWebResponse;
+
+            HttpWebResponse response = null;
+            response = (HttpWebResponse)request.GetResponse();
+
+            return response;
         }
 
         #endregion public Method

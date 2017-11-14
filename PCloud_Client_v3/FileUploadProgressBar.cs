@@ -49,10 +49,10 @@ namespace PCloud_Client_v3
         }
 
 
-
+        FileUploader fu;
         public void StartUpload()
         {
-            FileUploader fu = new FileUploader();
+            fu = new FileUploader();
 
             fu.Started += (totalBytes) =>
             {
@@ -79,6 +79,7 @@ namespace PCloud_Client_v3
                 {
                     labState.ForeColor = Color.Blue;
                     labState.Text = "已完成";
+                    llabCancel.Enabled = false;
                 });
                 this.BeginInvoke(mi);
             };
@@ -89,6 +90,11 @@ namespace PCloud_Client_v3
                 fu.UploadFile(UploadUrl, FilePath, null);
             });
             task.Start();
+        }
+
+        private void llabCancel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            fu.isCancel = true;
         }
     }
 
@@ -102,6 +108,8 @@ namespace PCloud_Client_v3
 
         public delegate void OnFinished(string savePath);
         public event OnFinished Finished;
+
+        public Boolean isCancel { set; get; }
 
         public string UploadFile(string strURL, string strFilePath ,Dictionary<string,string> dict)
         {
@@ -223,6 +231,7 @@ namespace PCloud_Client_v3
                             int bytesRead = 0;
                             while ((bytesRead = stream.Read(buffer, 0, buffer.Length)) != 0)
                             {
+                                if (isCancel) return "{\"content\":\"{\"flag\":\"false\",\"message\":\"上传任务已取消\",\"action\":\"UserLogin\"} ";
                                 sendLength += bytesRead;
                                 //分段上传文件
                                 postStream.Write(buffer, 0, bytesRead);

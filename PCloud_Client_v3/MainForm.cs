@@ -269,7 +269,10 @@ namespace PCloud_Client_v3
             fdpb.StartDownload();
 
             //选项卡页面跳转至下载页面
-            tabControl.SelectedIndex = 2;
+            //tabControl.SelectedIndex = 2;
+
+            //选项卡下载页面显示提示
+            tabControl.TabPages[2].ImageIndex = 1;
         }
 
 
@@ -291,7 +294,10 @@ namespace PCloud_Client_v3
             fupb.StartUpload();
             
             //选项卡页面跳转至上传页面
-            tabControl.SelectedIndex = 1;
+            //tabControl.SelectedIndex = 1;
+
+            //选项卡上传页面显示提示
+            tabControl.TabPages[1].ImageIndex = 1;
             
         }
 
@@ -318,7 +324,7 @@ namespace PCloud_Client_v3
 
             if (strFolderName == null || strFolderName == "") return;
 
-            string result = HttpResponse.GetHttpResponse(URL.GetUrl_CreateFolder(CuttentFolderID, strFolderName), null);
+            string result = HttpResponse.PostHttpResponse(URL.GetUrl_CreateFolder(CuttentFolderID, strFolderName), null);
             ActionJson ajson = new ActionJson(result);
             if(ajson.flag){
                 JObject jsonFolder = new JObject();
@@ -541,7 +547,38 @@ namespace PCloud_Client_v3
 
         private void btnOpenFolder_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start(UserInstance.Instance.Configuration["DownloadFolder"]);
+            string strPath = UserInstance.Instance.Configuration["DownloadFolder"];
+            DirectoryInfo di = new DirectoryInfo(strPath);
+            //文件夹如果不存在则创建文件夹
+            if (!di.Exists) di.Create();
+            System.Diagnostics.Process.Start(strPath);
+        }
+
+        private void flpCurrentFolder_DragDrop(object sender, DragEventArgs e)
+        {
+            //获取上传文件数组
+            Array files = (Array)e.Data.GetData(DataFormats.FileDrop);
+            for (int i = 0; i < files.Length; i++)
+            {
+                uploadFile(files.GetValue(i).ToString());
+            }
+        }
+
+        private void flpCurrentFolder_DragEnter(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop))
+            {
+                e.Effect = DragDropEffects.Link;
+            }
+            else
+            {
+                e.Effect = DragDropEffects.None;
+            }
+        }
+
+        private void tabControl_Selected(object sender, TabControlEventArgs e)
+        {
+            e.TabPage.ImageIndex = 0;
         }
 
 

@@ -168,26 +168,26 @@
             this.tsmiInfo_name.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiInfo_CopyFileName});
             this.tsmiInfo_name.Name = "tsmiInfo_name";
-            this.tsmiInfo_name.Size = new System.Drawing.Size(152, 22);
+            this.tsmiInfo_name.Size = new System.Drawing.Size(124, 22);
             this.tsmiInfo_name.Text = "文件名称";
             // 
             // tsmiInfo_CopyFileName
             // 
             this.tsmiInfo_CopyFileName.Name = "tsmiInfo_CopyFileName";
-            this.tsmiInfo_CopyFileName.Size = new System.Drawing.Size(152, 22);
+            this.tsmiInfo_CopyFileName.Size = new System.Drawing.Size(148, 22);
             this.tsmiInfo_CopyFileName.Text = "复制到剪贴板";
             this.tsmiInfo_CopyFileName.Click += new System.EventHandler(this.tsmiInfo_CopyFileName_Click);
             // 
             // tsmiInfo_Size
             // 
             this.tsmiInfo_Size.Name = "tsmiInfo_Size";
-            this.tsmiInfo_Size.Size = new System.Drawing.Size(152, 22);
+            this.tsmiInfo_Size.Size = new System.Drawing.Size(124, 22);
             this.tsmiInfo_Size.Text = "文件大小";
             // 
             // tsmiInfo_Type
             // 
             this.tsmiInfo_Type.Name = "tsmiInfo_Type";
-            this.tsmiInfo_Type.Size = new System.Drawing.Size(152, 22);
+            this.tsmiInfo_Type.Size = new System.Drawing.Size(124, 22);
             this.tsmiInfo_Type.Text = "文件类型";
             // 
             // cmsFolderItem
@@ -198,31 +198,34 @@
             this.tsmiMoveFolder,
             this.tsmiDeleteFolder});
             this.cmsFolderItem.Name = "cmsFolderItem";
-            this.cmsFolderItem.Size = new System.Drawing.Size(113, 92);
+            this.cmsFolderItem.Size = new System.Drawing.Size(153, 114);
             this.cmsFolderItem.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.cmsFileItem_ItemClicked);
             // 
             // tsmiOpenFolder
             // 
             this.tsmiOpenFolder.Name = "tsmiOpenFolder";
-            this.tsmiOpenFolder.Size = new System.Drawing.Size(112, 22);
+            this.tsmiOpenFolder.Size = new System.Drawing.Size(152, 22);
             this.tsmiOpenFolder.Text = "打开";
             // 
             // tsmiRenameFolder
             // 
+            this.tsmiRenameFolder.Enabled = false;
             this.tsmiRenameFolder.Name = "tsmiRenameFolder";
-            this.tsmiRenameFolder.Size = new System.Drawing.Size(112, 22);
+            this.tsmiRenameFolder.Size = new System.Drawing.Size(152, 22);
             this.tsmiRenameFolder.Text = "重命名";
             // 
             // tsmiMoveFolder
             // 
+            this.tsmiMoveFolder.Enabled = false;
             this.tsmiMoveFolder.Name = "tsmiMoveFolder";
-            this.tsmiMoveFolder.Size = new System.Drawing.Size(112, 22);
+            this.tsmiMoveFolder.Size = new System.Drawing.Size(152, 22);
             this.tsmiMoveFolder.Text = "移动";
             // 
             // tsmiDeleteFolder
             // 
+            this.tsmiDeleteFolder.Enabled = false;
             this.tsmiDeleteFolder.Name = "tsmiDeleteFolder";
-            this.tsmiDeleteFolder.Size = new System.Drawing.Size(112, 22);
+            this.tsmiDeleteFolder.Size = new System.Drawing.Size(152, 22);
             this.tsmiDeleteFolder.Text = "删除";
             // 
             // timerShowFullName

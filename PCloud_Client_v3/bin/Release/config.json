@@ -7,13 +7,13 @@
   },
   {
     "key": "DownloadFolder",
-    "value": "D:\\PCloud_Download\\",
+    "value": ".\\PCloud_Download\\",
     "note": "下载文件保存目录",
     "group": "Basic"
   },
   {
     "key": "Username",
-    "value": "admin",
+    "value": "",
     "note": "用户名",
     "group": "User"
   }

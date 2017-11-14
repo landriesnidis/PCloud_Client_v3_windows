@@ -185,6 +185,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icon_cloud.ico" />
+    <None Include="Resources\image_news.png" />
     <None Include="Resources\image_folder.png" />
     <None Include="Resources\image_share.png" />
     <None Include="Resources\tsmi_refresh.png" />
